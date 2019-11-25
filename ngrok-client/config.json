@@ -6,11 +6,7 @@
   "webui": "http://[HOST]:[PORT:4040]",
   "url": "https://github.com/ThePicklenat0r/hassio-ngrok",
   "arch": [
-    "armhf",
-    "armv7",
-    "aarch64",
-    "amd64",
-    "i386"
+    "amd64"
   ],
   "startup": "system",
   "boot": "auto",
@@ -28,13 +24,19 @@
     "NGROK_AUTH": "",
     "NGROK_SUBDOMAIN": "",
     "NGROK_HOSTNAME": "",
-    "NGROK_REGION": ""
+    "NGROK_REGION": "",
+    "PORT_80": true,
+    "PORT_443": true,
+    "PORT_8123": false
   },
   "schema": {
     "NGROK_AUTH": "str",
     "NGROK_SUBDOMAIN": "str",
     "NGROK_HOSTNAME": "str",
-    "NGROK_REGION": "str"
+    "NGROK_REGION": "str",
+    "PORT_80": "bool",
+    "PORT_443": "bool",
+    "PORT_8123": "bool"
   },
   "image": "thepicklenat0r/hassio-ngrok"
 }

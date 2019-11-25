@@ -1,0 +1,19 @@
+
+  "name": "NGROK Client",
+  "version": "5.1",
+  "slug": "ngrok-client",
+  "description": "A NGROK Client",
+  "url": "https://home-assistant.io/addons/mosquitto/",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "system",
+  "boot": "auto",
+  "map": ["share"],
+  "auth_api": true,
+  "ports": {
+    "4040/tcp": 4040
+   },
+  "options": {
+  },
+  "schema": {},
+  "image": "ThePicklenat0r/hassio-ngrok-client"
+}

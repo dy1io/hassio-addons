@@ -12,7 +12,7 @@
     "4040/tcp": null
    },
   "ingress": true,
-  "ingress_port": 4041,
+  "ingress_port": 4040,
   "options": {
     "NGROK_AUTH": "",
     "NGROK_SUBDOMAIN": "",
@@ -26,6 +26,9 @@
     "NGROK_LOOK_DOMAIN": "",
     "NGROK_BINDTLS": ""
   },
-  "schema": {},
+  "schema": {
+    "NGROK_AUTH": "str",
+    "NGROK_PORT": "int"
+  },
   "image": "thepicklenat0r/hassio-ngrok-client"
 }

@@ -27,5 +27,5 @@
     "NGROK_BINDTLS": ""
   },
   "schema": {},
-  "image": "thepicklenat0r/hassio-ngrok-client"
+  "image": "thepicklenat0r/hassio-ngrok-client:testing"
 }

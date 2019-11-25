@@ -9,10 +9,10 @@
   "boot": "auto",
   "map": ["share"],
   "ports": {
-    "4040/tcp": null
+    "4040/tcp": 4041
    },
   "ingress": true,
-  "ingress_port": 4040,
+  "ingress_port": 4041,
   "options": {
     "NGROK_AUTH": "",
     "NGROK_SUBDOMAIN": "",

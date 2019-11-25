@@ -12,9 +12,11 @@
     "i386"
   ],
   "startup": "system",
-  "boot": "before",
+  "boot": "auto",
   "ports": {
     "8080/tcp": 38080
-   },
+  },
+  "options": {},
+  "schema": {},
   "image": "snowzach/doods"
 }

@@ -1,0 +1,20 @@
+{
+  "name": "DOODS",
+  "version": "latest",
+  "slug": "doods",
+  "description": "DOODS for Hass.io",
+  "url": "https://github.com/snowzach/doods",
+  "arch": [
+    "armhf", 
+    "armv7", 
+    "aarch64", 
+    "amd64", 
+    "i386"
+  ],
+  "startup": "system",
+  "boot": "auto",
+  "ports": {
+    "8080/tcp": 38080
+   },
+  "image": "snowzach/doods"
+}

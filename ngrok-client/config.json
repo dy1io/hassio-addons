@@ -1,33 +1,40 @@
 {
-  "name": "NGROK Client",
-  "version": "testing",
-  "slug": "ngrok-client",
-  "description": "A NGROK Client",
-  "url": "https://github.com/ThePicklenat0r/docker-ngrok",
-  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "name": "ngrok Client",
+  "version": "latest",
+  "slug": "ngrok",
+  "description": "A ngrok Client for Hass.io",
+  "webui": "http://[HOST]:[PORT:4040]",
+  "url": "https://github.com/ThePicklenat0r/hassio-ngrok",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64",
+    "i386"
+  ],
   "startup": "system",
   "boot": "auto",
   "map": ["share"],
   "ports": {
-   },
+    "4040/tcp": null
+  },
   "ingress": true,
   "ingress_port": 4040,
+  "ingress_entry": "/inspect/http",
+  "panel_icon": "mdi:wan",
+  "panel_title": "ngrok Client",
+  "panel_admin": true,
   "options": {
     "NGROK_AUTH": "",
     "NGROK_SUBDOMAIN": "",
     "NGROK_HOSTNAME": "",
-    "NGROK_REMOTE_ADDR": "",
-    "NGROK_USERNAME": "",
-    "NGROK_PASSWORD": "",
-    "NGROK_PROTOCOL": "",
-    "NGROK_PORT": 8123,
-    "NGROK_REGION": "",
-    "NGROK_LOOK_DOMAIN": "",
-    "NGROK_BINDTLS": ""
+    "NGROK_REGION": ""
   },
   "schema": {
     "NGROK_AUTH": "str",
-    "NGROK_PORT": "int"
+    "NGROK_SUBDOMAIN": "str",
+    "NGROK_HOSTNAME": "str",
+    "NGROK_REGION": "str"
   },
-  "image": "thepicklenat0r/hassio-ngrok-client"
+  "image": "thepicklenat0r/hassio-ngrok"
 }

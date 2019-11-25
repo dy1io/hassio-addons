@@ -1,6 +1,6 @@
 {
   "name": "NGROK Client",
-  "version": "5.1",
+  "version": "latest",
   "slug": "ngrok-client",
   "description": "A NGROK Client",
   "url": "https://github.com/ThePicklenat0r/docker-ngrok",

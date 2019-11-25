@@ -3,12 +3,11 @@
   "version": "5.1",
   "slug": "ngrok-client",
   "description": "A NGROK Client",
-  "url": "https://home-assistant.io/addons/mosquitto/",
+  "url": "https://github.com/ThePicklenat0r/docker-ngrok",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "system",
   "boot": "auto",
   "map": ["share"],
-  "auth_api": true,
   "ports": {
     "4040/tcp": 4040
    },

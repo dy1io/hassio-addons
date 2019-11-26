@@ -25,6 +25,7 @@
     "NGROK_SUBDOMAIN": "",
     "NGROK_HOSTNAME": "",
     "NGROK_REGION": "",
+    "NGROK_INSPECT": "",
     "PORT_80": true,
     "PORT_443": true,
     "PORT_8123": false
@@ -33,7 +34,8 @@
     "NGROK_AUTH": "str",
     "NGROK_SUBDOMAIN": "str",
     "NGROK_HOSTNAME": "str",
-    "NGROK_REGION": "str",
+    "NGROK_REGION": "list(us|eu|ap|au|sa|jp|in)",
+    "NGROK_INSPECT": "bool",
     "PORT_80": "bool",
     "PORT_443": "bool",
     "PORT_8123": "bool"

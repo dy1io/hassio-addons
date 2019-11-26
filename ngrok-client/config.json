@@ -17,7 +17,6 @@
   ],
   "startup": "system",
   "boot": "auto",
-  "map": ["share"],
   "ports": {
     "4040/tcp": null
   },
@@ -35,10 +34,10 @@
     "PORT_8123": false
   },
   "schema": {
-    "NGROK_AUTH": "str",
-    "NGROK_SUBDOMAIN": "str",
-    "NGROK_HOSTNAME": "str",
-    "NGROK_REGION": "list(''|us|eu|ap|au|sa|jp|in)",
+    "NGROK_AUTH": "str?",
+    "NGROK_SUBDOMAIN": "str?",
+    "NGROK_HOSTNAME": "str?",
+    "NGROK_REGION": "list(us|eu|ap|au|sa|jp|in)?",
     "NGROK_INSPECT": "bool",
     "PORT_80": "bool",
     "PORT_443": "bool",

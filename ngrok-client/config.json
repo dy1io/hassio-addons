@@ -24,10 +24,10 @@
     "4040/tcp": "Web interface (Not required for Hass.io Ingress)"
   },
   "options": {
-    "NGROK_AUTH": "",
-    "NGROK_SUBDOMAIN": "",
-    "NGROK_HOSTNAME": "",
-    "NGROK_REGION": "",
+    "NGROK_AUTH": null,
+    "NGROK_SUBDOMAIN": null,
+    "NGROK_HOSTNAME": null,
+    "NGROK_REGION": null,
     "NGROK_INSPECT": false,
     "PORT_80": true,
     "PORT_443": true,

@@ -22,19 +22,21 @@
   "panel_admin": true,
   "options": {
     "NGROK_AUTH": "",
+    "NGROK_ADDR": "[HOST]",
     "NGROK_SUBDOMAIN": "",
     "NGROK_HOSTNAME": "",
     "NGROK_REGION": "",
-    "NGROK_INSPECT": "",
+    "NGROK_INSPECT": false,
     "PORT_80": true,
     "PORT_443": true,
     "PORT_8123": false
   },
   "schema": {
     "NGROK_AUTH": "str",
+    "NGROK_ADDR": "match(^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$)",
     "NGROK_SUBDOMAIN": "str",
     "NGROK_HOSTNAME": "str",
-    "NGROK_REGION": "list(us|eu|ap|au|sa|jp|in)",
+    "NGROK_REGION": "list(''|us|eu|ap|au|sa|jp|in)",
     "NGROK_INSPECT": "bool",
     "PORT_80": "bool",
     "PORT_443": "bool",

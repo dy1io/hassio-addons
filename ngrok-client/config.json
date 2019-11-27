@@ -1,6 +1,6 @@
 {
   "name": "ngrok Client",
-  "version": "0.1",
+  "version": "1.0",
   "slug": "ngrok",
   "description": "A ngrok client for Hass.io",
   "webui": "http://[HOST]:[PORT:4040]",
@@ -25,8 +25,7 @@
     "NGROK_REGION": "us",
     "NGROK_INSPECT": false,
     "PORT_80": true,
-    "PORT_443": true,
-    "PORT_8123": false
+    "PORT_443": true
   },
   "schema": {
     "NGROK_AUTH": "str?",
@@ -35,8 +34,7 @@
     "NGROK_REGION": "list(us|eu|ap|au|sa|jp|in)",
     "NGROK_INSPECT": "bool",
     "PORT_80": "bool",
-    "PORT_443": "bool",
-    "PORT_8123": "bool"
+    "PORT_443": "bool"
   },
   "image": "thepicklenat0r/hassio-ngrok"
 }

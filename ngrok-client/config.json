@@ -7,7 +7,7 @@
   "url": "https://github.com/ThePicklenat0r/hassio-ngrok",
   "host_network": "true",
   "arch": [
-    "amd64",
+    "amd64"
   ],
   "startup": "system",
   "boot": "auto",

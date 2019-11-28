@@ -1,0 +1,19 @@
+# https://dev.azure.com/home-assistant
+
+trigger:
+  branches:
+    include:
+    - master
+pr: none
+
+variables:
+  - name: versionBuilder
+    value: '2.0'
+  - group: docker
+
+
+jobs:
+- template: https://raw.githubusercontent.com/ThePicklenat0r/hassio-addons/master/.azure/azp-template-addon.yml
+  parameters:
+    addon: 'ngrok'
+    arch: '--all'

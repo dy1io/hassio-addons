@@ -8,7 +8,6 @@
   "host_network": "true",
   "arch": [
     "amd64",
-    "i386"
   ],
   "startup": "system",
   "boot": "auto",

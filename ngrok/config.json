@@ -1,11 +1,10 @@
 {
   "name": "ngrok Client",
-  "version": "1.1",
+  "version": "1.2",
   "slug": "ngrok",
   "description": "A ngrok client for Hass.io",
   "webui": "http://[HOST]:[PORT:4040]",
   "url": "https://github.com/ThePicklenat0r/hassio-ngrok",
-  "host_network": "true",
   "arch": [
     "aarch64",
     "amd64",
@@ -15,27 +14,29 @@
   ],
   "startup": "system",
   "boot": "auto",
+  "host_network": true,
   "ports": {
     "4040/tcp": "4040"
   },
   "ports_description": {
     "4040/tcp": "Web interface"
   },
+  "map": ["share"],
   "options": {
-    "NGROK_AUTH": "",
-    "NGROK_SUBDOMAIN": "",
-    "NGROK_HOSTNAME": "",
-    "NGROK_REGION": "us",
-    "NGROK_INSPECT": false,
-    "USE_TLS": false
+    "auth_token": "",
+    "region": "us",
+    "port": 8123,
+    "use_tls": false,
+    "inspect": false
   },
   "schema": {
-    "NGROK_AUTH": "str?",
-    "NGROK_SUBDOMAIN": "str?",
-    "NGROK_HOSTNAME": "str?",
-    "NGROK_REGION": "list(us|eu|ap|au|sa|jp|in)",
-    "NGROK_INSPECT": "bool",
-    "USE_TLS": "bool"
+    "auth_token": "str?",
+    "region": "list(us|eu|ap|au|sa|jp|in)?",
+    "port": "int(1,65535)?",
+    "use_tls": "bool?",
+    "inspect": "bool?",
+    "subdomain": "str?",
+    "hostname": "str?"
   },
   "image": "thepicklenat0r/{arch}-hassio-ngrok"
 }

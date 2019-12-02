@@ -39,7 +39,7 @@ Example add-on configuration:
 
 ### Option: `auth_token`
 
-Set your ngrok authentication token. This option is required if using a custom subdomain or hostname or if you want to use the PORT_443 option.
+Set your ngrok authentication token. This option is required if using a custom `subdomain` or `hostname` or if you want to use the `use_tls` option.
 
 ### Option: `region`
 
@@ -60,7 +60,7 @@ in | India
 
 _true or false_
 
-Choose whether a tls tunnel should be created for port 443 instead of http. Using a tls tunnel avoids certificate errors on custom domains and prevents ngrok from being able to man-in-the-middle your encrypted connection. If using hostname, this is highly recommended.
+Choose whether a tls tunnel should be created instead of http. Using a tls tunnel avoids certificate errors on custom domains and prevents ngrok from being able to man-in-the-middle your encrypted connection. If using hostname, this is highly recommended.
 
 ### Option: `inspect`
 

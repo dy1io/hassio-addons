@@ -14,9 +14,9 @@ It is intented to be paired with a proxy, such as [Nginx Proxy Manager](https://
 
 1. Install the addon
 2. You have 3 options for configuration:
-  1. Leave the default configuration and start the addon. 
-  2. Configure the options in the addon (see descriptions for each option below).
-  3. Create a custom configuration file for ngrok and save it to /share/ngrok-config with the name ngrok.yml. See [ngrok's documentation](https://ngrok.com/docs#config-options) for details on how to create a configuration file.
+    1. Leave the default configuration and start the addon. 
+    2. Configure the options in the addon (see descriptions for each option below).
+    3. Create a custom configuration file for ngrok and save it to /share/ngrok-config with the name ngrok.yml. See [ngrok's documentation](https://ngrok.com/docs#config-options) for details on how to create a configuration file. This method overrides any options set through the addon config.
 3. Start the addon
 
 **Note**: _If you did not specify a `subdomain` or `hostname` you will need to open the web interface to get your ngrok.io url._

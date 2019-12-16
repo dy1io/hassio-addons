@@ -1,5 +1,5 @@
-[Change Log](https://github.com/ThePicklenat0r/hassio-ngrok/releases/tag/v1.0.1)
+[Change Log](https://github.com/ThePicklenat0r/hassio-ngrok/releases/tag/v1.0.2)
 
 
 Latest change:
-Bump version
+Update config.json

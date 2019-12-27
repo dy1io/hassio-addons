@@ -12,12 +12,16 @@ This add-on creates a ngrok tunnel over http and https. Some ISPs do not allow p
 
 ## How to use
 
-1. Add the Github repo to your Hass.io: [https://github.com/ThePicklenat0r/hassio-addons](https://github.com/ThePicklenat0r/hassio-addons)
+1. Add the Github repo to your Hass.io: <https://github.com/ThePicklenat0r/hassio-addons>
 2. Install the addon
 3. You have 3 options for configuration:
-    1. Leave the default configuration and start the addon. 
+    1. Leave the default configuration and start the addon.
+      _This is **not** recommended as the default configuration can expose your
+      data to ngrok!_
     2. Configure the options in the addon (see descriptions for each option below).
-    3. Create a custom configuration file for ngrok and save it to /share/ngrok-config with the name ngrok.yml. See [ngrok's documentation](https://ngrok.com/docs#config-options) for details on how to create a configuration file. This method overrides any options set through the addon config.
+    3. Create a custom configuration file for ngrok and save it to /share/ngrok-config
+      with the name ngrok.yml. See [ngrok's documentation][ngrok-config-file] for details on how to create a configuration file.
+      This method overrides any options set through the addon config.
 4. Start the addon
 
 **Note**: _If you did not specify a `subdomain` or `hostname` you will need to open the web interface to get your ngrok.io url._
@@ -46,14 +50,14 @@ Set your ngrok authentication token. This option is required if using a custom `
 
 Specifies where the ngrok client will connect to host its tunnels. The following options are available:
 
-**Option** | **Location**
-:---:|:---
-us | United States
-eu | Europe
-ap | Asia/Pacific
-au | Australia
-sa | South America
-in | India
+| **Option** | **Location**  |
+| :--------: | :------------ |
+| us         | United States |
+| eu         | Europe        |
+| ap         | Asia/Pacific  |
+| au         | Australia     |
+| sa         | South America |
+| in         | India         |
 
 ### Option: `use_tls`
 
@@ -67,16 +71,21 @@ Choose whether a tls tunnel should be created instead of http. Using a tls tunne
 
 _true or false_
 
-Choose whether to allow ngrok to inspect your traffic. Typically this is disabled. This option only applies to http tunnels. For more information on what this does, see [ngrok's documentation](https://ngrok.com/docs#getting-started-inspect).
+Choose whether to allow ngrok to inspect your traffic. Typically this is disabled. This option only applies to http tunnels. For more information on what this does, see [ngrok's documentation][ngrok-inspect].
 
 ### Option: `subdomain`
 
 **Note**: _This option requires you set auth_token and have a paid account_
 
-Specifies a custom ngrok.io subdomain to use. Check out [ngrok's documentation](https://ngrok.com/docs#http-subdomain) for more information on this option.
+Specifies a custom ngrok.io subdomain to use. Check out [ngrok's documentation][ngrok-subdomain] for more information on this option.
 
 ### Option: `hostname`
 
 **Note**: _This option requires you set auth_token and have a paid account_
 
-Specifies a custom domain name to use. The use of wildcard domains is allowed (ex. *.example.com). Check out [ngrok's documentation](https://ngrok.com/docs#http-custom-domains) for more information on this option. This option will always take priority over `subdomain` option.
+Specifies a custom domain name to use. The use of wildcard domains is allowed (ex. *.example.com). Check out [ngrok's documentation][ngrok-hostname] for more information on this option. This option will always take priority over `subdomain` option.
+
+[ngrok-config-file]: https://ngrok.com/docs#config-options
+[ngrok-inspect]: https://ngrok.com/docs#getting-started-inspect
+[ngrok-subdomain]: https://ngrok.com/docs#http-subdomain
+[ngrok-hostname]: https://ngrok.com/docs#http-custom-domains

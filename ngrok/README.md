@@ -36,7 +36,7 @@ Example add-on configuration:
     [
       {
         "proto": "tls",
-        "addr": "8123",
+        "addr": 8123,
         "hostname": "home.example.com"
       }
     ]
@@ -64,8 +64,9 @@ options are available:
 
 ### Option: `tunnels`
 
-Define ngrok tunnels as a JSON list. You must specify a `name` and `definition`
-for each tunnel. Please read [ngrok's documentation][ngrok-tunnel-def] for a
+Define ngrok tunnels as a JSON list. You do not need to specify a name for each
+tunnel, the name is automatically generated based on the order in which you
+enter them. Please read [ngrok's documentation][ngrok-tunnel-def] for a
 description of each available option used in the `definition`. All ngrok tunnel
 definition options are available in this addon.
 

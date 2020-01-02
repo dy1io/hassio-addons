@@ -1,6 +1,4 @@
 ## Changes
 
-## 🐛 Bug Fixes
-
-- Remove test flag from deploy-addon.yml @ThePicklenat0r (#6)
+- Fix image in config.json @ThePicklenat0r (#7)
 

@@ -1,6 +1,6 @@
 {
   "name": "ngrok Client",
-  "version": "v2.0.1",
+  "version": "v2.0.3",
   "slug": "ngrok",
   "description": "A ngrok client for Hass.io",
   "webui": "http://[HOST]:[PORT:4040]",
@@ -24,20 +24,18 @@
   "options": {
     "auth_token": "",
     "region": "us",
-    "tunnels":
-      [
-        {
-          "proto": "http",
-          "addr": 8123,
-          "inspect": false
-        }
-      ]
+    "tunnels": [
+      {
+        "proto": "http",
+        "addr": 8123,
+        "inspect": false
+      }
+    ]
   },
   "schema": {
     "auth_token": "str?",
     "region": "list(us|eu|ap|au|sa|jp|in)?",
-    "tunnels":
-    [
+    "tunnels": [
       {
         "proto": "list(http|tls|tcp)",
         "addr": "int(1,65535)",
@@ -55,5 +53,5 @@
       }
     ]
   },
-  "image": "thepicklenat0r/{arch}-hassio-ngrok"
+  "image": "{arch}-hassio-ngrok"
 }

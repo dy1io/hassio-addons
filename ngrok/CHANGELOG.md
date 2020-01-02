@@ -1,5 +1,6 @@
-[Change Log](https://github.com/ThePicklenat0r/hassio-ngrok/releases/tag/v2.0.1)
+## Changes
 
+## 🐛 Bug Fixes
 
-Latest change:
+- Remove test flag from deploy-addon.yml @ThePicklenat0r (#6)
 

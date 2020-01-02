@@ -1,6 +1,6 @@
 {
   "name": "Example",
-  "version": "19",
+  "version": "v1.0.0",
   "slug": "example",
   "description": "Example add-on",
   "url": "https://github.com/ThePicklenat0r/addon-example",
@@ -23,5 +23,5 @@
     "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
     "seconds_between_quotes": "int(1,120)"
   },
-  "image": "{arch}-hassio-example"
+  "image": "thepicklenat0r/{arch}-hassio-example"
 }

@@ -31,6 +31,12 @@ This repository can be used as a template for building new add-ons.
 4. Update the `addon` env variable in `.github/workflows/deploy-addon.yml`
 5. Make changes in the `Dockerfile` and `rootfs` as necessary for the new addon.
 6. Update README.md with new documentation.
+7. Create the following secrets in the new repository:
+
+  | Secret      | Description                                 |
+  | :---------- | :------------------------------------------ |
+  | dockerToken | Authentication token for dockerUser         |
+  | repoToken   | GitHub public access token for gitUserEmail |
 
 **NOTE:** _The `slug`, `addon` env variable, and add-on folder must all match or the build will fail._
 

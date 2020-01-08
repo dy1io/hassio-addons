@@ -29,11 +29,13 @@ Example add-on configuration:
 
 ```json
 {
+  "log_level": "info",
   "auth_token": "my-auth-token",
   "region": "us",
   "tunnels":
     [
       {
+        "name": "hass",
         "proto": "tls",
         "addr": 8123,
         "hostname": "home.example.com"

@@ -1,4 +1,5 @@
 ## Changes
 
-- Fix image in config.json @ThePicklenat0r (#7)
+- Remove host network requirement @ThePicklenat0r (#9)
+- Switch to community addons base image and s6 supervisor @ThePicklenat0r (#8)
 

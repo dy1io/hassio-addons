@@ -1,6 +1,6 @@
 {
   "name": "ngrok Client",
-  "version": "v2.0.4",
+  "version": "v2.1.0",
   "slug": "ngrok",
   "description": "A ngrok client for Hass.io",
   "webui": "http://[HOST]:[PORT:4040]",
@@ -14,7 +14,6 @@
   ],
   "startup": "system",
   "boot": "auto",
-  "host_network": true,
   "ports": {
     "4040/tcp": "4040"
   },
@@ -22,10 +21,12 @@
     "4040/tcp": "Web interface"
   },
   "options": {
+    "log_level": "info",
     "auth_token": "",
     "region": "us",
     "tunnels": [
       {
+        "name": "hass",
         "proto": "http",
         "addr": 8123,
         "inspect": false
@@ -33,12 +34,14 @@
     ]
   },
   "schema": {
+    "log_level": "list(crit|warn|error|info|debug)",
     "auth_token": "str?",
     "region": "list(us|eu|ap|au|sa|jp|in)?",
     "tunnels": [
       {
+        "name": "str",
         "proto": "list(http|tls|tcp)",
-        "addr": "int(1,65535)",
+        "addr": "match(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]):([1-9]|[1-5]?[0-9]{2,4}|6[1-4][0-9]{3}|65[1-4][0-9]{2}|655[1-2][0-9]|6553[1-5]))|([1-9]|[1-5]?[0-9]{2,4}|6[1-4][0-9]{3}|65[1-4][0-9]{2}|655[1-2][0-9]|6553[1-5])$)",
         "inspect": "bool?",
         "auth": "str?",
         "host_header": "str?",
@@ -48,7 +51,7 @@
         "crt": "str?",
         "key": "str?",
         "client_cas": "str?",
-        "remote_addr": "int(1,65535)?",
+        "remote_addr": "match(^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]):([1-9]|[1-5]?[0-9]{2,4}|6[1-4][0-9]{3}|65[1-4][0-9]{2}|655[1-2][0-9]|6553[1-5])$)?",
         "metadata": "str?"
       }
     ]

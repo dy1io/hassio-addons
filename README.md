@@ -23,7 +23,7 @@ https://github.com/ThePicklenat0r/hassio-addons
 
 ## Issues
 
-Do not open issues here. Please open issues under each add-on's respective repository.
+Please only open issues under each add-on's respective repository.
 
 ## Thank you
 

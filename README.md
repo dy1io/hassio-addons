@@ -21,6 +21,10 @@ Assistant. Do not add individual add-on repositories, it will not work.
 https://github.com/ThePicklenat0r/hassio-addons
 ```
 
+## Issues
+
+Do not open issues here. Please open issues under each add-on's respective repository.
+
 ## Thank you
 
 A special thank you to everyone at [Community Hass.io Add-ons][addons-community].

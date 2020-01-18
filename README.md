@@ -2,7 +2,7 @@
 
 ## About
 
-These are a collection of add-ons for Hass.io that I've either built or modified
+These are a collection of add-ons for Hass.io that I've either built myself or modified
 from another source to serve my needs. Add-ons found here are typically born out
 of my own needs, but I publish them here in case anyone else finds them useful.
 

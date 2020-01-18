@@ -47,7 +47,7 @@ Example add-on configuration:
 ### Option: `auth_token`
 
 Set your ngrok authentication token. This option is required if using a custom
-`subdomain` or `hostname` or if you want to use the `use_tls` option.
+`subdomain` or `hostname` or for tunnels other than `http`.
 
 ### Option: `region`
 
@@ -65,10 +65,27 @@ options are available:
 
 ### Option: `tunnels`
 
-Define ngrok tunnels as a JSON list. You do not need to specify a name for each
-tunnel, the name is automatically generated based on the order in which you
-enter them. Please read [ngrok's documentation][ngrok-tunnel-def] for a
-description of each available option used in the `definition`. All ngrok tunnel
-definition options are available in this addon.
+A json list of tunnels. Use the options defined below to create you tunnels. You
+must specify at least the `name`, `proto`, and `addr` for each tunnel. For more
+details, see [ngrok's documentation][ngrok_docs_tunnels].
 
-[ngrok-tunnel-def]: https://ngrok.com/docs#tunnel-definitions
+| Option        | Protocol  | Description                                                                                         |
+| ------------- | --------- | --------------------------------------------------------------------------------------------------- |
+| `name`*       | all       | unique name for the tunnel must only use `a-z` `0-9` `-` or `_`                                     |
+| `proto`*      | all       | tunnel protocol name, one of http, tcp, tls                                                         |
+| `addr`*       | all       | forward traffic to this local port number or network address                                        |
+| `inspect`     | all       | enable http request inspection                                                                      |
+| `auth`        | http      | HTTP basic authentication credentials to enforce on tunneled requests                               |
+| `host_header` | http      | Rewrite the HTTP Host header to this value, or preserve to leave it unchanged                       |
+| `bind_tls`    | http      | bind an HTTPS or HTTP endpoint or both true, false, or both                                         |
+| `subdomain`   | http, tls | subdomain name to request. If unspecified, uses the tunnel name                                     |
+| `hostname`    | http, tls | hostname to request (requires reserved name and DNS CNAME)                                          |
+| `crt`         | tls       | PEM TLS certificate at this path to terminate TLS traffic before forwarding locally                 |
+| `key`         | tls       | PEM TLS private key at this path to terminate TLS traffic before forwarding locally                 |
+| `client_cas`  | tls       | PEM TLS certificate authority at this path will verify incoming TLS client connection certificates. |
+| `remote_addr` | tcp       | bind the remote TCP port on the given address                                                       |
+| `metadata`    | all       | arbitrary user-defined metadata that will appear in the ngrok service API when listing tunnels      |
+
+*required
+
+[ngrok_docs_tunnels]: https://ngrok.com/docs#tunnel-definitions

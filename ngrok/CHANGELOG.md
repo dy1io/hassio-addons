@@ -1,5 +1,7 @@
 ## Changes
 
-- Remove host network requirement @ThePicklenat0r (#9)
-- Switch to community addons base image and s6 supervisor @ThePicklenat0r (#8)
+- Improve-documentation @ThePicklenat0r (#10)
+- Update base images - Fix for #11 @ThePicklenat0r (#12)
+
+
 

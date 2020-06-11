@@ -75,4 +75,40 @@ details, see [ngrok's documentation][ngrok_docs_tunnels].
 
 *required
 
+## Home Assistant Integration
+
+You can leverage the ngrok client API to expose your tunnel status to Home
+Assistant. This is done by creating a REST API sensor in your Home Assistant
+`configuration.yaml`.
+
+### Example: Get Public URL
+
+If you want to monitor the public URL that ngrok generates, you can do that through
+a [RESTful sensor][rest_docs] in Home Assistant.
+
+1. Add this to your `configuration.yaml` or create a new [package file][packages_docs].
+   If you changed the default tunnel name, update the tunnel name where it has
+   hass` in the example.
+
+``` YAML
+sensor:
+  - platform: rest
+    resource: http://localhost:4040/api/tunnels/hass
+    name: Home Assistant URL
+    value_template: '{{ value_json.public_url }}'
+```
+
+2. Reboot Home Assistant Core
+
+Now you will have a sensor called `sensor.home_assistant_url` You could then use
+this to create an automation each to alert you of the public url.
+
+### Further reading
+
+You can monitor almost anything about the tunnel as long as it is active.
+See [ngrok's api documentation][ngrok_docs_api] for details.
+
 [ngrok_docs_tunnels]: https://ngrok.com/docs#tunnel-definitions
+[rest_docs]: https://www.home-assistant.io/integrations/rest/
+[packages_docs]: https://www.home-assistant.io/docs/configuration/packages/
+[ngrok_docs_api]: https://ngrok.com/docs#client-api

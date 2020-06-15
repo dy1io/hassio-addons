@@ -1,5 +1,6 @@
+Lets pretend v2.1.4 didn't happen 🤷 
+
 ## Changes
 
-- Remove regex from addr & remote_addr to simplify and allow more versatility @ThePicklenat0r (#20)
-- Fixes to DOCS.md @ThePicklenat0r (#19)
+- Revert "Remove regex from addr & remote_addr to simplify and allow more versatility" @ThePicklenat0r (#21)
 

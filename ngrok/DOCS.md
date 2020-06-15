@@ -7,7 +7,9 @@
 3. Configure the options in the addon (see descriptions for each option below).
 4. Start the addon
 
-**Note**: _If you did not specify a `subdomain` or `hostname` you will need to open the web interface to get your ngrok.io url._
+**Note**: _If you did not specify a `subdomain` or `hostname` you will need to_
+_open the web interface to get your ngrok.io url, or you can use the_
+_[API](#home-assistant-integration) to be notified through Home Assistant._
 
 Example add-on configuration:
 
@@ -87,16 +89,17 @@ If you want to monitor the public URL that ngrok generates, you can do that thro
 a [RESTful sensor][rest_docs] in Home Assistant.
 
 1. Add this to your `configuration.yaml` or create a new [package file][packages_docs].
-   If you changed the default tunnel name, update the tunnel name where it has
-   hass` in the example.
 
-``` YAML
-sensor:
-  - platform: rest
-    resource: http://localhost:4040/api/tunnels/hass
-    name: Home Assistant URL
-    value_template: '{{ value_json.public_url }}'
-```
+    ``` YAML
+    sensor:
+      - platform: rest
+        resource: http://localhost:4040/api/tunnels/hass
+        name: Home Assistant URL
+        value_template: '{{ value_json.public_url }}'
+    ```
+
+    **Note**: _If you changed the default tunnel name, replace `hass` in the_
+              _example with your tunnel name._
 
 2. Reboot Home Assistant Core
 

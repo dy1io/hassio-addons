@@ -1,5 +1,5 @@
 ## Changes
 
-- Switch to Home Assistant official base images @ThePicklenat0r (#18)
-- Update Documentation @ThePicklenat0r (#17)
+- Remove regex from addr & remote_addr to simplify and allow more versatility @ThePicklenat0r (#20)
+- Fixes to DOCS.md @ThePicklenat0r (#19)
 

@@ -1,4 +1,0 @@
-## Changes
-
-* Update documentation
-

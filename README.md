@@ -1,4 +1,4 @@
-# Hass.io Add-ons by ThePicklenat0r
+# Hass.io Add-ons by dy1io
 
 ## About
 
@@ -18,7 +18,7 @@ Add the repository url listed below to your Hass.io Add-On Store tab in Home
 Assistant. Do not add individual add-on repositories, it will not work.
 
 ```txt
-https://github.com/ThePicklenat0r/hassio-addons
+https://github.com/dy1io/hassio-addons
 ```
 
 ## Issues

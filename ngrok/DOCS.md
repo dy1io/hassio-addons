@@ -2,10 +2,26 @@
 
 ## How to use
 
-1. Add the Github repo to your Hass.io: <https://github.com/ThePicklenat0r/hassio-addons>
+1. Add the Github repo to your Hass.io: <https://github.com/dy1io/hassio-addons>
 2. Install the addon
 3. Configure the options in the addon (see descriptions for each option below).
-4. Start the addon
+4. Add this addon to your `trusted_proxies` list in `configuration.yaml`.
+
+    ```yaml
+      http:
+        use_x_forwarded_for: true
+        trusted_proxies:
+        - 127.0.0.1
+        - 172.30.32.0/24
+        - 172.30.33.0/24
+    ```
+
+    **Note**: _If you've modified your Supervisor or Docker network you may_
+    _need to update the addresses for your system. See [Home Assistant's documentation][trusted_proxies_docs]_
+    _for more info._
+
+5. Start the addon
+6. Restart Home Assistant Core
 
 **Note**: _If you did not specify a `subdomain` or `hostname` you will need to_
 _open the web interface to get your ngrok.io url, or you can use the_
@@ -54,7 +70,7 @@ options are available:
 
 ### Option: `tunnels`
 
-A json list of tunnels. Use the options defined below to create you tunnels. You
+A list of tunnels. Use the options defined below to create you tunnels. You
 must specify at least the `name`, `proto`, and `addr` for each tunnel. For more
 details, see [ngrok's documentation][ngrok_docs_tunnels].
 
@@ -115,3 +131,4 @@ See [ngrok's api documentation][ngrok_docs_api] for details.
 [rest_docs]: https://www.home-assistant.io/integrations/rest/
 [packages_docs]: https://www.home-assistant.io/docs/configuration/packages/
 [ngrok_docs_api]: https://ngrok.com/docs#client-api
+[trusted_proxies_docs]: https://www.home-assistant.io/integrations/http#reverse-proxies

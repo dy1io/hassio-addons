@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv bashio
+
+exec /usr/bin/ngrok.sh

@@ -15,15 +15,11 @@ and learning on my part, particularly with GitHub Actions and CI/CD.
 ## Installation
 
 Add the repository url listed below to your Hass.io Add-On Store tab in Home
-Assistant. Do not add individual add-on repositories, it will not work.
+Assistant.
 
 ```txt
 https://github.com/dy1io/hassio-addons
 ```
-
-## Issues
-
-Please only open issues under each add-on's respective repository.
 
 ## Thank you
 

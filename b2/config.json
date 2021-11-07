@@ -20,13 +20,13 @@
   "boot": "auto",
   "options": {
     "log_level": "info",
-    "applicationKeyId": "your-application-keyid-here",
-    "applicationKey": "your-application-key-here",
+    "applicationKeyId": null,
+    "applicationKey": null,
     "bucket": "home-assistant-backup",
     "keep_days": "7"
   },
   "schema": {
-    "log_level": "list(crit|warn|error|info|debug)",
+    "log_level": "list(info|debug)",
     "applicationKeyId": "str",
     "applicationKey": "str",
     "bucket": "str",

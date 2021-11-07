@@ -1,13 +1,41 @@
-### Features (To-Do):
+# Home Assistant B2 Backup
 
-- authenticate to backblaze b2
-- run b2 sync to a user-specified bucket
-- cloud retention (b2 keepdays param)
-- create readme/docs
+Backup your Home Assistant to BackBlaze B2
 
-### Future plans:
+## About
 
-- Use cronjob to take a backup via supervisor api
-  - user provides conjob schedule
-- exclude addons, folder, etc. from backup
-- local retention policy
+Store your Home Assistant backups in BackBlaze B2 Storage! BackBlaze B2 is an
+affordable cloud storage solution. Off-site backups are an important component
+to any backup strategy.
+
+### Features
+
+Currently, this addon only syncs your `/backup` folder to a specified bucket on
+B2. In the future I plan to expand this functionality to be a fully featured
+backup management for Home Assistant solution built on B2 cloud storage.
+
+### Future plans
+
+Here are a few of the features I plan to add. Any contributions are appreciated.
+
+#### Coming soon(tm)
+
+- Allow for a backup schedule to be specified by the user in cron format
+  - Backups will be taken via the Supervisor API
+  - Backup names will contain userful information like backup type and timestamp
+- Retention Policies (Local & Cloud)
+- User-specified password
+- Improved secrets handling
+- Improved documentation
+- Add more information about BackBlaze B2, including a guide.
+
+#### Longer term
+
+- Allow for partial backups
+  - User-specified parameters for backups
+- Differentiate between auto & manual backups
+
+#### Very long term
+
+- Present configuration in a webui
+- Allow for restores from cloud or local from the UI

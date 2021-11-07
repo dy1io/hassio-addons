@@ -27,7 +27,7 @@
   },
   "schema": {
     "log_level": "list(crit|warn|error|info|debug)",
-    "applicationKeyID": "str",
+    "applicationKeyId": "str",
     "applicationKey": "str",
     "bucket": "str",
     "keep_days": "int?"

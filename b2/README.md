@@ -34,6 +34,7 @@ Here are a few of the features I plan to add. Any contributions are appreciated.
 - Allow for partial backups
   - User-specified parameters for backups
 - Differentiate between auto & manual backups
+- Add file prefixes to support multiple Home Assistant instances.
 
 #### Very long term
 

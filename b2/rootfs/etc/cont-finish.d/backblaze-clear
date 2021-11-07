@@ -1,0 +1,2 @@
+#!/usr/bin/with-contenv bashio
+b2 clear-account

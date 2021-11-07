@@ -1,0 +1,37 @@
+{
+  "name": "Home Assistant B2 Backup",
+  "version": "0.0.1",
+  "slug": "b2",
+  "description": "Backup your Home Assistant to BackBlaze B2",
+  "url": "https://github.com/dy1io/hassio-addons",
+  "stage": "experimental",
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armhf",
+    "armv7",
+    "i386"
+  ],
+  "startup": "application",
+  "backup": "cold",
+  "map": [
+    "backup:ro"
+  ],
+  "boot": "auto",
+  "options": {
+    "log_level": "info",
+    "applicationKeyId": null,
+    "applicationKey": null,
+    "bucket": "home-assistant-backup",
+    "keep_days": "7",
+    "allowEmptySource": false
+  },
+  "schema": {
+    "log_level": "list(info|debug)",
+    "applicationKeyId": "str",
+    "applicationKey": "str",
+    "bucket": "str",
+    "keep_days": "int?",
+    "allowEmptySource": "bool?"
+  }
+}

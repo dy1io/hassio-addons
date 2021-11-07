@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bashio
+B2KEY="$(bashio::config 'applicationKey')"
+B2KEYID="$(bashio::config 'applicationKeyId')"
+bashio::log.debug "Attempting authorization to BackBlaze..."
+b2 authorize-account $B2KEYID $B2KEY

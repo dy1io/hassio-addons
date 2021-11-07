@@ -1,6 +1,6 @@
 {
   "name": "Home Assistant B2 Backup",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "slug": "b2",
   "description": "Backup your Home Assistant to BackBlaze B2",
   "url": "https://github.com/dy1io/hassio-addons",

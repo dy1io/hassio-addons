@@ -1,0 +1,11 @@
+#!/usr/bin/with-contenv bashio
+BUCKET=$(bashio::config 'bucket')
+declare -a options
+
+if bashio::var.has_value "$(bashio::config 'keep_days')"; then
+  options+=(--keepDays "$(bashio::config 'keep_days')")
+else
+  options+=(--delete)
+fi
+
+b2 sync "${options[@]}" /backup "b2://$BUCKET"

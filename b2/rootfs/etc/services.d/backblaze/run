@@ -8,4 +8,8 @@ else
   options+=(--delete)
 fi
 
+if bashio::config.true 'allowEmptySource'; then
+  options+=(--allowEmptySource)
+fi
+
 b2 sync "${options[@]}" /backup "b2://$BUCKET"

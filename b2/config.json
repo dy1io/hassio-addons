@@ -23,13 +23,15 @@
     "applicationKeyId": null,
     "applicationKey": null,
     "bucket": "home-assistant-backup",
-    "keep_days": "7"
+    "keep_days": "7",
+    "allowEmptySource": false
   },
   "schema": {
     "log_level": "list(info|debug)",
     "applicationKeyId": "str",
     "applicationKey": "str",
     "bucket": "str",
-    "keep_days": "int?"
+    "keep_days": "int?",
+    "allowEmptySource": "bool?"
   }
 }

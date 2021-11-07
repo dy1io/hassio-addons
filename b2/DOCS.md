@@ -43,6 +43,12 @@ The number of days to keep a backup in BackBlaze after deleting it locally.
 Setting this to `null` will delete backups immediately after they're removed
 locally.
 
+### Option: `allowEmptySource`
+
+Allow empty directories to sync.
+
+**Caution**: _Setting this to `true` could delete all of your backups._
+
 ## Restore from B2
 
 To restore a backup from BackBlaze, you must log into BackBlaze and recover the

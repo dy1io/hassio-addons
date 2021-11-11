@@ -5,10 +5,9 @@
 1. Add the Github repo to your Home Assistant: <https://github.com/dy1io/hassio-addons>
 2. Install the addon
 3. Create a BackBlaze B2 bucket and API Key
-4. Add the `applicationKeyId`, `applicationKey`, and `bucket` to the configuration
-5. 
-6. Optionally set `keep_days` to your liking.
-7. Start the addon
+4. Add the `applicationKeyId`, `applicationKey`, and `bucket` to the configuration 
+5. Optionally set `keep_days` to your liking.
+6. Start the addon
 
 Example add-on configuration:
 

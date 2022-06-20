@@ -17,7 +17,8 @@ if [[ $(bashio::config 'log_level') != 'debug' ]]; then
   options+=(--noProgress)
 fi
 
+bashio::log.info "Running sync..."
 b2 sync "${options[@]}" /backup "b2://$BUCKET"
 
-bashio::log.debug "Waiting $DELAY seconds"
+bashio::log.info "Waiting $DELAY seconds"
 sleep $DELAY

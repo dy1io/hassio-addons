@@ -1,5 +1,6 @@
 #!/usr/bin/with-contenv bashio
 BUCKET=$(bashio::config 'bucket')
+DELAY=$(bashio::config 'delay')
 declare -a options
 
 if bashio::var.has_value "$(bashio::config 'keep_days')"; then
@@ -16,4 +17,8 @@ if [[ $(bashio::config 'log_level') != 'debug' ]]; then
   options+=(--noProgress)
 fi
 
+bashio::log.info "Running sync..."
 b2 sync "${options[@]}" /backup "b2://$BUCKET"
+
+bashio::log.info "Waiting $DELAY seconds"
+sleep $DELAY

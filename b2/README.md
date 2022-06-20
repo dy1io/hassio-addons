@@ -23,9 +23,9 @@ Here are a few of the features I plan to add. Any contributions are appreciated.
 - Allow for a backup schedule to be specified by the user in cron format
   - Backups will be taken via the Supervisor API
   - Backup names will contain userful information like backup type and timestamp
-- Retention Policies (Local & Cloud)
+- Retention Policies (Local & ~~Cloud~~)
 - User-specified password
-- Improved secrets handling
+- ~~Improved secrets handling~~
 - Improved documentation
 - Add more information about BackBlaze B2, including a guide.
 

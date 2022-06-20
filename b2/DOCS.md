@@ -14,7 +14,7 @@ Example add-on configuration:
 ```yaml
   log_level: info
   applicationKeyId: "your-application-keyid"
-  applicationKey: "your-application-key"
+  applicationKey: "!secret application-key-secret"
   bucket: "home-assistant-backup"
   keep_days: 7
 ```
@@ -29,7 +29,7 @@ The applicationKeyId provided by BackBlaze
 
 ### Option: `applicationKey`
 
-The applicationKey provied by BackBlaze
+The applicationKey provied by BackBlaze. Supports secrets.
 
 ### Option: `bucket`
 
@@ -47,6 +47,11 @@ locally.
 Allow empty directories to sync.
 
 **Caution**: _Setting this to `true` could delete all of your backups._
+
+### Options: `delay`
+
+How long to wait between syncs (in seconds). Setting this number too low could
+cause excessive class C transactions and increase your B2 bill.
 
 ## Restore from B2
 

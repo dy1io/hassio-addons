@@ -1,6 +1,6 @@
 {
   "name": "Home Assistant B2 Backup",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "slug": "b2",
   "description": "Backup your Home Assistant to BackBlaze B2",
   "init": false,

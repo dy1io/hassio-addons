@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.4
+
+- fix for arm architecure
+
 ## 0.0.3
 
 - add a 300 second rate limit to prevent excessive class C transactions.

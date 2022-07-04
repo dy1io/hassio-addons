@@ -4,8 +4,9 @@
 
 1. Add the Github repo to your Hass.io: <https://github.com/dy1io/hassio-addons>
 2. Install the addon
-3. Configure the options in the addon (see descriptions for each option below).
-4. Add this addon to your `trusted_proxies` list in `configuration.yaml`.
+3. Create an ngrok account and copy your auth key.
+4. Configure the options in the addon (see descriptions for each option below).
+5. Add this addon to your `trusted_proxies` list in `configuration.yaml`.
 
     ```yaml
       http:
@@ -20,8 +21,8 @@
     _need to update the addresses for your system. See [Home Assistant's documentation][trusted_proxies_docs]_
     _for more info._
 
-5. Start the addon
-6. Restart Home Assistant Core
+6. Start the addon
+7. Restart Home Assistant Core
 
 **Note**: _If you did not specify a `subdomain` or `hostname` you will need to_
 _open the web interface to get your ngrok.io url, or you can use the_

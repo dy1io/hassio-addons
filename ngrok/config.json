@@ -1,8 +1,9 @@
 {
   "name": "ngrok Client",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "slug": "ngrok",
   "description": "A ngrok client for Hass.io",
+  "init": false,
   "webui": "http://[HOST]:[PORT:4040]",
   "url": "https://github.com/dy1io/hassio-addons",
   "stage": "deprecated",
@@ -30,7 +31,8 @@
         "name": "hass",
         "proto": "http",
         "addr": 8123,
-        "inspect": false
+        "inspect": false,
+        "auth": ""
       }
     ]
   },
@@ -44,7 +46,7 @@
         "proto": "list(http|tls|tcp)",
         "addr": "match(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]):([1-9]|[1-5]?[0-9]{2,4}|6[1-4][0-9]{3}|65[1-4][0-9]{2}|655[1-2][0-9]|6553[1-5]))|([1-9]|[1-5]?[0-9]{2,4}|6[1-4][0-9]{3}|65[1-4][0-9]{2}|655[1-2][0-9]|6553[1-5])$)",
         "inspect": "bool?",
-        "auth": "str?",
+        "auth": "password",
         "host_header": "str?",
         "bind_tls": "bool?",
         "subdomain": "str?",

@@ -2,7 +2,9 @@
 
 ### 2.1.8
 
-Fix S6 error
+- Fix S6 error fixes [#12](https://github.com/dy1io/hassio-addons/issues/12)
+- Require auth key (ngrok now requires an account to use their service)
+
 
 ### 2.1.7
 

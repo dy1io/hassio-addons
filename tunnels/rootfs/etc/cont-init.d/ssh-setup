@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bashio
+
+if [[ ! -d /data/ssh/id_rsa || ! -d /data/ssh/id_rsa.pub || $(bashio::config 'force_new_sshkey') ]]; then
+  mkdir -p /data/ssh
+  ssh-keygen -q -t rsa -N '' -f /data/ssh/id_rsa <<<y >/dev/null 2>&1
+fi
+
+bashio::log.info "Display id_rsa.pub:"
+cat /data/ssh/id_rsa.pub
+
+bashio::log.info "Display SSH key hash:"
+ssh-keygen -lf /data/ssh/id_rsa | awk '{print $2}'

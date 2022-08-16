@@ -1,0 +1,34 @@
+#!/usr/bin/with-contenv bashio
+declare -a options
+declare -a tunnels
+declare connection
+declare attempts
+
+attempts=3
+
+options+="-p $(bashio::config 'port')"
+options+="-o StrictHostKeyChecking=no"
+
+for id in $(bashio::config "tunnels|keys"); do
+  tunnel=$(bashio::config "tunnels[${id}].tunnel")
+  TUNNELS+="-R $tunnel"
+done
+
+SERVER=$(bashio::config 'server')
+if [[ $(bashio::config 'user') ]]
+  USER=$(bashio::config 'user')
+  connection=$USER@$SERVER
+else
+  connection=$SERVER
+fi
+
+while [[ $attempts -gt 0 ]] do
+  ssh "${options[@]}" "${tunnels[@]}" "${connection}"
+  let "attempts-=1"
+  bashio::log.warning "Failed to establish tunnel"
+  bashio::log.info "Waiting 30 seconds before trying again"
+  sleep 30
+done
+
+bashio::log.error "Failed to establish a tunnel too many times, please check your settings and try again."
+exit 1

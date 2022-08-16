@@ -17,8 +17,6 @@ options:
   log_level: info
   server: ""
   port: 22
-  user: root
-  force_new_sshkey: false
   tunnels:
     - type: remote
       tunnel: home:80:172.30.32.1:8123
@@ -26,7 +24,7 @@ schema:
   log_level: list(crit|warn|error|info|debug)
   server: str
   port: int
-  user: str
-  force_new_sshkey: bool
+  user: str?
+  force_new_sshkey: bool?
   tunnels:
-    - tunnel: str?
+    - tunnel: str

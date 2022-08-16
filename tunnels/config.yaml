@@ -12,6 +12,8 @@ arch:
   - armv7
   - i386
 startup: system
+map:
+  - share:rw
 boot: auto 
 options:
   log_level: info

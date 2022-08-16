@@ -5,7 +5,7 @@ declare attempts
 attempts=3
 
 options+=" -p $(bashio::config 'port')"
-options+=" -i /data/ssh/id_rsa"
+options+=" -i /share/ssh-tunnels/id_rsa"
 options+=" -o StrictHostKeyChecking=no"
 
 for id in $(bashio::config "tunnels|keys"); do
@@ -15,7 +15,7 @@ for id in $(bashio::config "tunnels|keys"); do
 done
 
 SERVER=$(bashio::config 'server')
-if [[ $(bashio::config 'user') ]];
+if [[ $(bashio::config.has_value 'user') ]]; then
   USER=$(bashio::config 'user')
   options+=" $USER@$SERVER"
 else
@@ -23,10 +23,10 @@ else
 fi
 
 while [[ $attempts -gt 0 ]]; do
-  bashio::log.debug "Executing: ssh ${options[@]}"
-  ssh "${options[@]}" "${tunnels[@]}" "${connection}"
-  bashio::log.debug "End SSH session..."
   let "attempts-=1"
+  bashio::log.debug "Executing: ssh ${options[@]}"
+  ssh "${options[@]}"
+  bashio::log.debug "End SSH session..."
   bashio::log.warning "Failed to establish tunnel"
   bashio::log.info "Waiting 30 seconds before trying again"
   sleep 30

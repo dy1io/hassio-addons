@@ -1,6 +1,6 @@
 name: SSH Tunneling Client
 version: 0.0.0
-slug: ngrok
+slug: tunnels
 description: Establishes SSH tunnels for allow secure remote access.
 init: false
 url: https://github.com/dy1io/hassio-addons

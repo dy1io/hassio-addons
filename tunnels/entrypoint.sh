@@ -1,7 +1,6 @@
 #!/usr/bin/with-contenv bashio
 
 KEYSTORE="/data/ssh-keystore"
-ATTEMPTS=3
 
 bashio::log.debug "Check if a new key needs to be created"
 if [[ ! -d $KEYSTORE/id_rsa || ! -d $KEYSTORE/id_rsa.pub || $(bashio::config.true 'force_new_sshkey') ]]; then
@@ -41,20 +40,6 @@ fi
 
 bashio::log.debug "Options built"
 bashio::log.debug "Options: ${options[@]}"
-
-bashio::log.debug "Testing connection..."
-until [[ (ssh ${options[@]} 2>/dev/null || true) ]]; do
-  if [[ $attempts -le 0 ]]; then
-    bashio::log.error "Failed to establish a tunnel too many times, please check your settings and try again."
-    exit 1
-  fi
-  bashio::log.debug "Waiting 30 seconds..."
-  sleep 30
-  let "attempts-=1"
-  bashio::log.debug "Testing SSH connection..."
-done
-
-bashio::log.debug "SSH connection test successful!"
 
 bashio::log.info "Starting SSH tunnels..."
 

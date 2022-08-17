@@ -7,4 +7,4 @@ COPY entrypoint.sh /entrypoint.sh
 # Setup requirements
 RUN set -x && apk add --no-cache openssh
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+CMD [ "/entrypoint.sh" ]

@@ -11,15 +11,12 @@ arch:
   - armv7
   - i386
 startup: system
-map:
-  - share:rw
 boot: auto 
 options:
   server: ""
   port: 22
   tunnels:
-    - type: remote
-      tunnel: home:80:supervisor:8123
+    - tunnel: home:80:supervisor:8123
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   server: str

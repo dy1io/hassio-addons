@@ -3,7 +3,7 @@
 KEYSTORE="/data/ssh-keystore"
 
 bashio::log.debug "Check if a new key needs to be created"
-if [[ ! -d $KEYSTORE/id_rsa || ! -d $KEYSTORE/id_rsa.pub || $(bashio::config.true 'force_new_sshkey') ]]; then
+if [[ (!$(bashio::fs.file_exists "$KEYSTORE/id_rsa")) || (!$(bashio::fs.file_exists "$KEYSTORE/id_rsa.pub")) || $(bashio::config.true 'force_new_sshkey') ]]; then
   bashio::log.notice "Generating a new RSA key..."
   mkdir -p $KEYSTORE
   ssh-keygen -q -t rsa -N '' -f $KEYSTORE/id_rsa <<<y >/dev/null 2>&1
@@ -11,17 +11,16 @@ fi
 
 bashio::log.info "Display id_rsa.pub:"
 cat $KEYSTORE/id_rsa.pub
-bashio::log.info "."
 bashio::log.info "=================================================="
-bashio::log.info "."
 bashio::log.info "Display SSH key hash:"
 ssh-keygen -lf $KEYSTORE/id_rsa | awk '{print $2}'
 
 bashio::log.debug "Building options"
 declare -a options
 
+options+=(-T)
 options+=(-p $(bashio::config 'port'))
-options+=(-i $KEYSTORE/id_rsa)
+options+=(-i "$KEYSTORE/id_rsa")
 options+=(-o StrictHostKeyChecking=no)
 
 for id in $(bashio::config "tunnels|keys"); do

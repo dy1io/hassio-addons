@@ -1,6 +1,7 @@
 name: SSH Tunneling Client
 version: 0.0.0
 slug: tunnels
+init: false
 description: Establishes SSH tunnels for allow secure remote access.
 url: https://github.com/dy1io/hassio-addons
 stage: experimental

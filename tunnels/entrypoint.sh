@@ -1,13 +1,29 @@
 #!/usr/bin/with-contenv bashio
 
-KEYSTORE="/data/ssh-keystore"
+KEYSTORE="/share/tunnels/ssh-keystore"
 
-bashio::log.debug "Check if a new key needs to be created"
-if [[ (!$(bashio::fs.file_exists "$KEYSTORE/id_rsa")) || (!$(bashio::fs.file_exists "$KEYSTORE/id_rsa.pub")) || $(bashio::config.true 'force_new_sshkey') ]]; then
-  bashio::log.notice "Generating a new RSA key..."
-  mkdir -p $KEYSTORE
-  ssh-keygen -q -t rsa -N '' -f $KEYSTORE/id_rsa <<<y >/dev/null 2>&1
+##Debugging
+
+if [[ $(bashio::fs.file_exists "$KEYSTORE/id_rsa") ]]; then
+  bashio::log.info "id_rsa found"
 fi
+
+if [[ $(bashio::fs.file_exists "$KEYSTORE/id_rsa.pub") ]]; then
+  bashio::log.info "id_rsa found"
+fi
+
+if [[ $(bashio::config.true 'force_new_sshkey') ]]; then
+  bashio::log.info "force_new_sshkey enabled"
+fi
+
+##Debugging End
+
+#bashio::log.debug "Check if a new key needs to be created"
+#if [[ (!$(bashio::fs.file_exists "$KEYSTORE/id_rsa")) || (!$(bashio::fs.file_exists "$KEYSTORE/id_rsa.pub")) || $(bashio::config.true 'force_new_sshkey') ]]; then
+#  bashio::log.notice "Generating a new RSA key..."
+#  mkdir -p $KEYSTORE
+#  ssh-keygen -q -t rsa -N '' -f $KEYSTORE/id_rsa <<<y >/dev/null 2>&1
+#fi
 
 bashio::log.info "Display id_rsa.pub:"
 cat $KEYSTORE/id_rsa.pub
@@ -38,8 +54,8 @@ else
 fi
 
 bashio::log.debug "Options built"
-bashio::log.debug "Options: ${options[@]}"
 
-bashio::log.info "Starting SSH tunnels..."
+bashio::log.info "Attempting to establish SSH tunnels with:"
+bashio::log.info "ssh ${options[@]}"
 
 ssh ${options[@]}

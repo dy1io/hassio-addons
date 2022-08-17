@@ -12,7 +12,9 @@ arch:
   - armv7
   - i386
 startup: system
-boot: auto 
+boot: auto
+map:
+  - share:rw
 options:
   server: ""
   port: 22

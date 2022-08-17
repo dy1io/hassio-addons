@@ -2,7 +2,6 @@ name: SSH Tunneling Client
 version: 0.0.0
 slug: tunnels
 description: Establishes SSH tunnels for allow secure remote access.
-init: false
 url: https://github.com/dy1io/hassio-addons
 stage: experimental
 arch:
@@ -16,14 +15,13 @@ map:
   - share:rw
 boot: auto 
 options:
-  log_level: info
   server: ""
   port: 22
   tunnels:
     - type: remote
-      tunnel: home:80:172.30.32.1:8123
+      tunnel: home:80:supervisor:8123
 schema:
-  log_level: list(crit|warn|error|info|debug)
+  log_level: list(trace|debug|info|notice|warning|error|fatal)?
   server: str
   port: int
   user: str?

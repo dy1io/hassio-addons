@@ -2,6 +2,7 @@
 
 bashio::log.debug "Building options"
 declare -a options
+KEYSTORE="/data/ssh-keystore"
 
 options+=(-T)
 options+=(-p $(bashio::config 'port'))
@@ -24,11 +25,11 @@ else
   options+=($SERVER)
 fi
 
-if [[ $(bashio::config.true 'sni-proxy') ]]; then
+if [[ $(bashio::config.true 'sni_proxy') ]]; then
   options+=(sni-proxy=true)
 fi
 
-if [[ $(bashio::config.true 'tcp-alias') ]]; then
+if [[ $(bashio::config.true 'tcp_alias') ]]; then
   options+=(tcp-alias=true)
 fi
 

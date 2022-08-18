@@ -2,28 +2,33 @@
 
 KEYSTORE="/share/tunnels/ssh-keystore"
 
-##Debugging
+#Debugging
+bashio::log.info "$KEYSTORE/id_rsa"
 
 if [[ $(bashio::fs.file_exists "$KEYSTORE/id_rsa") ]]; then
   bashio::log.info "id_rsa found"
+else
+  bashio::log.info "id_rsa not found"
 fi
 
-if [[ $(bashio::fs.file_exists "$KEYSTORE/id_rsa.pub") ]]; then
-  bashio::log.info "id_rsa found"
+if [[ (!$(bashio::fs.file_exists "$KEYSTORE/id_rsa")) ]]; then
+  bashio::log.info "id_rsa not found secondary test"
 fi
 
 if [[ $(bashio::config.true 'force_new_sshkey') ]]; then
   bashio::log.info "force_new_sshkey enabled"
+else
+  bashio::log.info "force_new_sshkey disabled"
 fi
 
-##Debugging End
+#Debugging End
 
-#bashio::log.debug "Check if a new key needs to be created"
-#if [[ (!$(bashio::fs.file_exists "$KEYSTORE/id_rsa")) || (!$(bashio::fs.file_exists "$KEYSTORE/id_rsa.pub")) || $(bashio::config.true 'force_new_sshkey') ]]; then
-#  bashio::log.notice "Generating a new RSA key..."
-#  mkdir -p $KEYSTORE
-#  ssh-keygen -q -t rsa -N '' -f $KEYSTORE/id_rsa <<<y >/dev/null 2>&1
-#fi
+bashio::log.debug "Check if a new key needs to be created"
+if [[ (!$(bashio::fs.file_exists "$KEYSTORE/id_rsa")) || (!$(bashio::fs.file_exists "$KEYSTORE/id_rsa.pub")) || $(bashio::config.true 'force_new_sshkey') ]]; then
+  bashio::log.notice "Generating a new RSA key..."
+  mkdir -p $KEYSTORE
+  ssh-keygen -q -t rsa -N '' -f $KEYSTORE/id_rsa <<<y >/dev/null 2>&1
+fi
 
 bashio::log.info "Display id_rsa.pub:"
 cat $KEYSTORE/id_rsa.pub

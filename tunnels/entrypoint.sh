@@ -37,7 +37,7 @@ declare -a options
 options+=(-T)
 options+=(-p $(bashio::config 'port'))
 options+=(-i "$KEYSTORE/id_rsa")
-options+=(-o StrictHostKeyChecking=no)
+options+=(-o StrictHostKeyChecking=no ServerAliveInterval=3)
 
 for id in $(bashio::config "tunnels|keys"); do
   tunnel=$(bashio::config "tunnels[${id}].tunnel")

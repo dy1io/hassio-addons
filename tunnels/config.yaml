@@ -1,5 +1,5 @@
 name: SSH Tunneling Client
-version: 0.0.0
+version: 0.0.1
 slug: tunnels
 init: false
 description: Establishes SSH tunnels for allow secure remote access.

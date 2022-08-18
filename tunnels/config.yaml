@@ -28,3 +28,5 @@ schema:
   force_new_sshkey: bool?
   tunnels:
     - tunnel: str
+  sni-proxy: bool?
+  tcp-alias: bool?

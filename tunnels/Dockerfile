@@ -5,6 +5,6 @@ FROM $BUILD_FROM
 COPY entrypoint.sh /entrypoint.sh
 
 # Setup requirements
-RUN set -x && apk add --no-cache openssh
+RUN set -x && apk add --no-cache openssh tree
 
 CMD [ "/entrypoint.sh" ]

@@ -5,17 +5,17 @@ KEYSTORE="/data/ssh-keystore"
 tree ${KEYSTORE}
 
 bashio::log.debug "Check if a new key needs to be created"
-if [[ ! -f "${KEYSTORE}/tunnels_rsa") ]] || [[ ! -f "$KEYSTORE/tunnels_rsa.pub") ]] || [[ $(bashio::config.true 'force_new_sshkey') ]]; then
+if [[ ! -f "${KEYSTORE}/tunnels_rsa" ]] || [[ ! -f "$KEYSTORE/tunnels_rsa.pub" ]] || [[ $(bashio::config.true 'force_new_sshkey') ]]; then
   bashio::log.notice "Generating a new RSA key..."
   mkdir -p $KEYSTORE
   ssh-keygen -b 4096 -t rsa -N "" -f ${KEYSTORE}/tunnels_rsa
 fi
 
 bashio::log.info "Display tunnels_rsa.pub:"
-cat $KEYSTORE/id_rsa.pub
+cat $KEYSTORE/tunnels_rsa.pub
 bashio::log.info "=================================================="
 bashio::log.info "Display SSH key hash:"
-ssh-keygen -lf $KEYSTORE/id_rsa | awk '{print $2}'
+ssh-keygen -lf $KEYSTORE/tunnels_rsa | awk '{print $2}'
 
 bashio::log.debug "Building options"
 declare -a options

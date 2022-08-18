@@ -19,7 +19,8 @@ options:
   server: ""
   port: 22
   tunnels:
-    - tunnel: home:80:supervisor:8123
+    - tunnel: home:80:172.30.32.1:8123
+  ServerKeepAliveInterval: 3
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   server: str
@@ -30,3 +31,4 @@ schema:
     - tunnel: str
   sni_proxy: bool?
   tcp_alias: bool?
+  ServerKeepAliveInterval: int

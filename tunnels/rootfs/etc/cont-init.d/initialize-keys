@@ -13,3 +13,4 @@ cat $KEYSTORE/tunnels_rsa.pub
 bashio::log.info "=================================================="
 bashio::log.info "Display SSH key hash:"
 ssh-keygen -lf $KEYSTORE/tunnels_rsa | awk '{print $2}'
+bashio::log.info "=================================================="

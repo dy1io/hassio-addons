@@ -8,7 +8,7 @@ options+=(-T)
 options+=(-p $(bashio::config 'port'))
 options+=(-i "$KEYSTORE/tunnels_rsa")
 options+=(-o StrictHostKeyChecking=no)
-options+=(-o ServerAliveInterval=3)
+options+=(-o ServerAliveInterval=$(bashio::config 'ServerKeepAliveInterval'))
 options+=(-o PubkeyAcceptedKeyTypes=ssh-rsa)
 
 for id in $(bashio::config "tunnels|keys"); do
@@ -35,7 +35,8 @@ fi
 
 bashio::log.debug "Options built"
 
-bashio::log.info "Attempting to establish SSH tunnels with:"
-bashio::log.info "ssh ${options[@]}"
+bashio::log.debug "Command to execute:"
+bashio::log.debug "ssh ${options[@]}"
 
+bashio::log.info "Attempting to establish SSH tunnels..."
 exec ssh ${options[@]}

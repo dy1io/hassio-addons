@@ -1,0 +1,34 @@
+name: SSH Tunneling Client
+version: 0.0.1
+slug: tunnels
+init: false
+description: Establishes SSH tunnels for allow secure remote access.
+url: https://github.com/dy1io/hassio-addons
+stage: experimental
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: system
+boot: auto
+map:
+  - share:rw
+options:
+  server: ""
+  port: 22
+  tunnels:
+    - tunnel: home:80:172.30.32.1:8123
+  ServerKeepAliveInterval: 3
+schema:
+  log_level: list(trace|debug|info|notice|warning|error|fatal)?
+  server: str
+  port: int
+  user: str?
+  force_new_sshkey: bool?
+  tunnels:
+    - tunnel: str
+  sni_proxy: bool?
+  tcp_alias: bool?
+  ServerKeepAliveInterval: int

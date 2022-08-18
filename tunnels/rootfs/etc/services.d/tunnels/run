@@ -1,0 +1,42 @@
+#!/usr/bin/with-contenv bashio
+
+bashio::log.debug "Building options"
+declare -a options
+KEYSTORE="/data/ssh-keystore"
+
+options+=(-T)
+options+=(-p $(bashio::config 'port'))
+options+=(-i "$KEYSTORE/tunnels_rsa")
+options+=(-o StrictHostKeyChecking=no)
+options+=(-o ServerAliveInterval=$(bashio::config 'ServerKeepAliveInterval'))
+options+=(-o PubkeyAcceptedKeyTypes=ssh-rsa)
+
+for id in $(bashio::config "tunnels|keys"); do
+  tunnel=$(bashio::config "tunnels[${id}].tunnel")
+  bashio::log.debug "Adding tunnel to request: $tunnel"
+  options+=(-R $tunnel)
+done
+
+SERVER=$(bashio::config 'server')
+if [[ $(bashio::config.has_value 'user') ]]; then
+  USER=$(bashio::config 'user')
+  options+=($USER@$SERVER)
+else
+  options+=($SERVER)
+fi
+
+if [[ $(bashio::config.true 'sni_proxy') ]]; then
+  options+=(sni-proxy=true)
+fi
+
+if [[ $(bashio::config.true 'tcp_alias') ]]; then
+  options+=(tcp-alias=true)
+fi
+
+bashio::log.debug "Options built"
+
+bashio::log.debug "Command to execute:"
+bashio::log.debug "ssh ${options[@]}"
+
+bashio::log.info "Attempting to establish SSH tunnels..."
+exec ssh ${options[@]}

@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bashio
+
 bashio::log.debug "Building options"
 declare -a options
 

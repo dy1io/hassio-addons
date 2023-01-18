@@ -5,7 +5,7 @@ arch:
   - armhf
   - armv7
   - i386
-version: dev
+version: 0.0.1
 slug: cloudflared
 description: Runs CloudFlare Tunnels
 options:

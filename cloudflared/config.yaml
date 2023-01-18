@@ -1,0 +1,16 @@
+name: CloudFlare Tunnels
+arch:
+  - amd64
+  - aarch64
+  - armhf
+  - armv7
+  - i386
+version: 0.0.1
+slug: cloudflared
+description: Runs CloudFlare Tunnels
+options:
+  token: ""
+schema:
+  token: str
+init: false
+stage: experimental

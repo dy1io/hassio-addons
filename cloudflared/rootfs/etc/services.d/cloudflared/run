@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bashio
+
+bashio::log.debug "Building options"
+declare -a options
+
+TOKEN=$(bashio::config 'token')
+options+=(--token $TOKEN)
+
+bashio::log.info "Opening tunnel"
+bashio::log.info "Running:"
+bashio::log.info "cloudflared tunnel --no-autoupdate run ${options[@]}"
+exec cloudflared tunnel --no-autoupdate run --token $TOKEN

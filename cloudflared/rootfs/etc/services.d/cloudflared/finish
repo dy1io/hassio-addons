@@ -1,0 +1,3 @@
+#!/usr/bin/env bashio
+
+/run/s6/basedir/bin/halt
